@@ -17,9 +17,8 @@ exports.getWeather = async (req, res, next) => {
       return res.json({ source: "cache", data: cached.data });
     }
 
-    // Fetch from API (mocking OpenWeatherMap here)
-    const API_KEY = "demo"; // replace with real OpenWeatherMap key if available
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=20&longitude=77&current_weather=true`;
+  
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=25&longitude=77&current_weather=true`;
 
     const response = await fetchWithRetry(url);
     const data = await response.json();
